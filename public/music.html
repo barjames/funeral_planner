@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Music - Funeral Planning</title> <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+         <h1>Funeral Planning Assistant</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="readings.html">Readings</a></li>
+            <li><a href="gospel.html">Gospels</a></li>
+            <li><a href="music.html" class="active">Music</a></li> <li><a href="prayers.html">Prayers</a></li>
+            <li><a href="poems.html">Poems</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Select Music</h2>
+        <p>Choose up to two pieces of music for the service. You can listen to samples using the embedded player if a valid link is provided.</p>
+
+        <ul id="item-list" class="item-list">
+            <li>Loading music...</li> </ul>
+
+        <div id="wishlist-container">
+             <h2>Your Wishlist</h2>
+              <div id="wishlist-summary"></div>
+             <ul id="wishlist-items"></ul>
+             <button id="generate-pdf-btn" class="pdf-button" style="display: none;">Generate PDF Plan</button>
+         </div>
+    </main>
+
+    <footer>
+        <p>© <span id="current-year"></span> Funeral Planning Services. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/client.js"></script>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof setActiveNavLink === 'function') setActiveNavLink();
+            if (typeof fetchAndDisplayContent === 'function') {
+                fetchAndDisplayContent('music'); // *** Changed content type ***
+            }
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
