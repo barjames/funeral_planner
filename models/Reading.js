@@ -16,7 +16,5 @@ const ReadingSchema = new mongoose.Schema({
     timestamps: true // Automatically add createdAt and updatedAt fields
 });
 
-// Create and export the Mongoose model based on the schema
-// Mongoose will automatically look for the plural, lowercased version of 'Reading'
-// for the collection name (i.e., 'readings')
+// Create and export the Mongoose model for 'Reading'
 module.exports = mongoose.model('Reading', ReadingSchema);

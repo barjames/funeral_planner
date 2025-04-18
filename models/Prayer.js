@@ -16,5 +16,5 @@ const PrayerSchema = new mongoose.Schema({
     timestamps: true
 });
 
-// Mongoose will look for the 'prayers' collection
+// Create and export the Mongoose model for 'Prayer'
 module.exports = mongoose.model('Prayer', PrayerSchema);

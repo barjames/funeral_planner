@@ -1,20 +1,22 @@
 const mongoose = require('mongoose');
 
-const PrayerSchema = new mongoose.Schema({
-    // Title or type of prayer (e.g., "Prayer of the Faithful - Option 1")
+const PoemSchema = new mongoose.Schema({
+    // Title of the poem (e.g., "Do Not Stand At My Grave And Weep")
     title: {
         type: String,
         required: true,
         trim: true
     },
-    // The full text content of the prayer
+    // The full text content of the poem
     content: {
         type: String,
         required: true
     },
+     // Optional: Add author field if needed
+    // author: { type: String, trim: true }
 }, {
     timestamps: true
 });
 
-// Mongoose will look for the 'prayers' collection
-module.exports = mongoose.model('Prayer', PrayerSchema);
+// Create and export the Mongoose model for 'Poem'
+module.exports = mongoose.model('Poem', PoemSchema);

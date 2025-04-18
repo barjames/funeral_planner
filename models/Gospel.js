@@ -1,22 +1,20 @@
 const mongoose = require('mongoose');
 
-const ReadingSchema = new mongoose.Schema({
-    // Title of the reading (e.g., "First Reading: Isaiah 25:6-9")
+const GospelSchema = new mongoose.Schema({
+    // Title of the gospel reading (e.g., "Gospel: John 14:1-6")
     title: {
         type: String,
-        required: true, // Title is mandatory
-        trim: true      // Remove leading/trailing whitespace
+        required: true,
+        trim: true
     },
-    // The full text content of the reading
+    // The full text content of the gospel
     content: {
         type: String,
-        required: true  // Content is mandatory
+        required: true
     },
 }, {
-    timestamps: true // Automatically add createdAt and updatedAt fields
+    timestamps: true
 });
 
-// Create and export the Mongoose model based on the schema
-// Mongoose will automatically look for the plural, lowercased version of 'Reading'
-// for the collection name (i.e., 'readings')
-module.exports = mongoose.model('Reading', ReadingSchema);
+// Create and export the Mongoose model for 'Gospel'
+module.exports = mongoose.model('Gospel', GospelSchema);
