@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex; /* Use flexbox for footer */
+    flex-direction: column; /* Stack body elements vertically */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+header {
+    background-color: #5a67d8; /* Indigo */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #434190; /* Darker Indigo */
+    text-align: center;
+    margin: 0;
+    flex-shrink: 0; /* Prevent nav from shrinking */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #5a67d8;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto; /* Center horizontally, add space top/bottom */
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    flex-grow: 1; /* Allow main content to grow and push footer down */
+    width: 90%; /* Add some width constraint */
+}
+
+h1, h2, h3 {
+    color: #434190;
+}
+h1 { font-size: 2em;}
+h2 { font-size: 1.6em; margin-top: 1.5em; border-bottom: 1px solid #eee; padding-bottom: 0.3em;}
+h3 { font-size: 1.3em; margin-top: 1.2em;}
+
+
+button {
+    background-color: #5a67d8;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    margin: 0.3rem;
+}
+
+button:hover:not(:disabled) {
+    background-color: #434190;
+}
+button:disabled {
+    background-color: #a0aec0; /* Gray when disabled */
+    cursor: not-allowed;
+}
+
+
+button.delete-button {
+    background-color: #e53e3e; /* Red */
+}
+button.delete-button:hover:not(:disabled) {
+    background-color: #c53030; /* Darker Red */
+}
+button.add-button {
+    background-color: #38a169; /* Green */
+}
+ button.add-button:hover:not(:disabled) {
+    background-color: #2f855a; /* Darker Green */
+}
+button.pdf-button {
+     background-color: #dd6b20; /* Orange */
+     margin-top: 1rem; /* Add space above PDF button */
+}
+button.pdf-button:hover:not(:disabled) {
+    background-color: #c05621; /* Darker Orange */
+}
+
+/* Item Lists (User and Admin) */
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.item-list li {
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.item-content {
+   flex-grow: 1; /* Take available space */
+   margin-right: 1rem; /* Space before buttons */
+   flex-basis: 70%; /* Give content more initial space */
+}
+
+.item-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #333; /* Darker text for item title */
+    font-size: 1.1em;
+}
+.item-content p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap; /* Preserve line breaks in content */
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.5;
+}
+.item-content .preview-text {
+    max-height: 100px; /* Limit preview height */
+    overflow-y: hidden; /* Hide overflow */
+    position: relative;
+}
+ /* Simple fade out effect for preview */
+.item-content .preview-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(249,249,249,0), rgba(249,249,249,1));
+    pointer-events: none; /* Allow clicking the link below */
+}
+
+.item-content .full-content {
+    display: none; /* Hide full content initially */
+    max-height: none; /* Allow full height when shown */
+}
+ .item-content a.preview-link {
+    color: #5a67d8;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+    display: inline-block;
+}
+ .item-content .music-player iframe {
+    max-width: 100%; /* Ensure iframe is responsive */
+    min-height: 160px; /* Ensure consistent minimum height */
+    height: auto;
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
+    margin-top: 0.5rem;
+    border: none; /* Remove iframe border */
+ }
+
+.item-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-end; /* Align buttons to the right */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    flex-basis: 25%; /* Give actions some space */
+    min-width: 120px; /* Ensure enough width for buttons */
+}
+
+ .item-actions button {
+    min-width: 110px; /* Ensure buttons have minimum width */
+    text-align: center;
+    margin-bottom:

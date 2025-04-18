@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Funeral Planning</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Content Management</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Back to Main Site</a></li>
+            <li><a href="#admin-readings">Readings</a></li>
+            <li><a href="#admin-gospels">Gospels</a></li>
+            <li><a href="#admin-music">Music</a></li>
+            <li><a href="#admin-prayers">Prayers</a></li>
+            <li><a href="#admin-poems">Poems</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p>Use this panel to add, view, or delete content for the website.</p>
+
+        <section id="admin-readings" class="admin-section">
+            <h2>Manage Readings</h2>
+            <form id="add-reading-form" class="admin-form">
+                <h3>Add New Reading</h3>
+                <label for="reading-title">Title:</label>
+                <input type="text" id="reading-title" name="title" required>
+
+                <label for="reading-content">Content:</label>
+                <textarea id="reading-content" name="content" rows="6" required></textarea>
+
+                <button type="submit" class="add-button">Add Reading</button>
+            </form>
+            <h3>Existing Readings</h3>
+            <ul id="readings-list" class="item-list">
+                <li>Loading...</li>
+            </ul>
+        </section>
+
+        <section id="admin-gospels" class="admin-section">
+             <h2>Manage Gospels</h2>
+             <form id="add-gospel-form" class="admin-form">
+                 <h3>Add New Gospel</h3>
+                 <label for="gospel-title">Title:</label>
+                 <input type="text" id="gospel-title" name="title" required>
+
+                 <label for="gospel-content">Content:</label>
+                 <textarea id="gospel-content" name="content" rows="6" required></textarea>
+
+                 <button type="submit" class="add-button">Add Gospel</button>
+             </form>
+             <h3>Existing Gospels</h3>
+             <ul id="gospels-list" class="item-list">
+                 <li>Loading...</li>
+             </ul>
+         </section>
+
+         <section id="admin-music" class="admin-section">
+             <h2>Manage Music</h2>
+             <form id="add-music-form" class="admin-form">
+                 <h3>Add New Music</h3>
+                 <label for="music-title">Title:</label>
+                 <input type="text" id="music-title" name="title" required>
+
+                 <label for="music-link">YouTube/Audio Link:</label>
+                 <input type="text" id="music-link" name="link" placeholder="e.g., https://www.youtube.com/watch?v=..." required>
+
+                 <button type="submit" class="add-button">Add Music</button>
+             </form>
+             <h3>Existing Music</h3>
+             <ul id="music-list" class="item-list">
+                 <li>Loading...</li>
+             </ul>
+         </section>
+
+        <section id="admin-prayers" class="admin-section">
+            <h2>Manage Prayers</h2>
+            <form id="add-prayer-form" class="admin-form">
+                <h3>Add New Prayer</h3>
+                <label for="prayer-title">Title:</label>
+                <input type="text" id="prayer-title" name="title" required>
+
+                <label for="prayer-content">Content:</label>
+                <textarea id="prayer-content" name="content" rows="6" required></textarea>
+
+                <button type="submit" class="add-button">Add Prayer</button>
+            </form>
+            <h3>Existing Prayers</h3>
+            <ul id="prayers-list" class="item-list">
+                <li>Loading...</li>
+            </ul>
+        </section>
+
+        <section id="admin-poems" class="admin-section">
+            <h2>Manage Poems</h2>
+            <form id="add-poem-form" class="admin-form">
+                <h3>Add New Poem</h3>
+                <label for="poem-title">Title:</label>
+                <input type="text" id="poem-title" name="title" required>
+
+                <label for="poem-content">Content:</label>
+                <textarea id="poem-content" name="content" rows="6" required></textarea>
+
+                <button type="submit" class="add-button">Add Poem</button>
+            </form>
+            <h3>Existing Poems</h3>
+            <ul id="poems-list" class="item-list">
+                <li>Loading...</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Funeral Planning Services. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/admin.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
